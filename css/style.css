@@ -1,0 +1,18 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+}
+
+/* Crée un décalage de position pour les ancres */
+[id]:target {
+    scroll-margin-top: 50px;
+}

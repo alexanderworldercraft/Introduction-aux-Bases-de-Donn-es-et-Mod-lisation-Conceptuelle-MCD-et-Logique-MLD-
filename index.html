@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction aux Bases de Données et Modélisation Conceptuelle (MCD) et Logique (MLD)</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="./js/bootstrap.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Icon dans l'onglet -->
+    <link rel="shortcut icon" href="./img/logo.png">
+
+    <!-- Highlight style -->
+    <link id="themeChange" rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <!-- Highlight script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Exercution du code Highlight script -->
+    <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top border-bottom border-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Cours by AlexanderWorldercraft</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#un">Qu'est-ce qu'une base de données ?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#deux">Les modèles conceptuels et logiques</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Exemple Concret : Application Web d'Archives de Documents
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#trois">Structure de la Base de Données : Archive</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#quatre">Modèle Conceptuel des Données (MCD)</a></li>
+                            <li><a class="dropdown-item" href="#cinq">Modèle Logique des Données (MLD)</a></li>
+                            <li><a class="dropdown-item" href="#six">Explications détaillées</a></li>
+                            <li><a class="dropdown-item" href="#sept">Conclusion</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="card border-0 my-5">
+        <div class="card-body text-center mt-5">
+            <h1 class="card-tilte">Introduction aux Bases de Données et Modélisation Conceptuelle (MCD) et Logique (MLD)
+            </h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <article id="un" class="card border-0 mb-5">
+            <section class="card-body">
+                <h3 class="card-tilte">Qu'est-ce qu'une base de données ?</h3>
+                <p class="card-text">Une base de données (BDD) est un ensemble organisé de données structurées,
+                    généralement stockées et accessibles électroniquement depuis un système informatique. Les bases de
+                    données sont essentielles pour stocker, gérer et récupérer efficacement des données.</p>
+            </section>
+        </article>
+
+        <article id="deux" class="card border-0 mb-5">
+            <section class="card-body">
+                <h3 class="card-tilte">Les modèles conceptuels et logiques</h3>
+                <ul class="list-group list-group-flush list-group-numbered">
+                    <li class="list-group-item mb-5">Modèle Conceptuel des Données (MCD) :
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Représente les concepts et les relations entre eux dans le
+                                système sans se préoccuper des aspects techniques.</li>
+                            <li class="list-group-item">Utilise des entités, des associations et des attributs pour
+                                décrire les données.</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item mb-5">Modèle Logique des Données (MLD) :
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Traduit le MCD en un schéma plus technique qui peut être
+                                implémenté dans un SGBD (Système de Gestion de Base de Données).</li>
+                            <li class="list-group-item">Utilise des tables, des colonnes et des clés pour structurer les
+                                données.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </article>
+
+        <article class="card border-0 mb-5">
+            <section class="card-body text-center">
+                <h2 class="card-tilte">Exemple Concret : Application Web d'Archives de Documents</h2>
+                <p class="card-text">Nous allons créer une base de données pour une application web d'archives de
+                    documents avec les tables et colonnes suivantes :</p>
+            </section>
+        </article>
+
+        <article id="trois" class="card border-0 mb-5">
+            <section class="card-body">
+                <h3 class="card-tilte">Structure de la Base de Données : Archive
+                </h3>
+                <p class="card-text">Tables :</p>
+                <ul class="list-group list-group-flush list-group-numbered">
+                    <li class="list-group-item mb-5"><b>Utilisateur</b>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">UtilisateurID (clé primaire)</li>
+                            <li class="list-group-item">EtatID (clé étrangère)</li>
+                            <li class="list-group-item">Nom (varchar(50))</li>
+                            <li class="list-group-item">MotDePasse (varchar(255))</li>
+                            <li class="list-group-item">Telephone (varchar(20))</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item mb-5"><b>Document</b>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">DocumentID (clé primaire)</li>
+                            <li class="list-group-item">EtatID (clé étrangère)</li>
+                            <li class="list-group-item">Titre (varchar(50))</li>
+                            <li class="list-group-item">Description (text)</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item mb-5"><b>Tag</b>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">TagID (clé primaire)</li>
+                            <li class="list-group-item">EtatID (clé étrangère)</li>
+                            <li class="list-group-item">Nom (varchar(50))</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item mb-5"><b>DocumentTag</b>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">DocumentID (clé étrangère)</li>
+                            <li class="list-group-item">TagID (clé étrangère)</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item mb-5"><b>Fichier</b>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">FichierID (clé primaire)</li>
+                            <li class="list-group-item">DocumentID (clé étrangère)</li>
+                            <li class="list-group-item">EtatID (clé étrangère)</li>
+                            <li class="list-group-item">Chemin (text)</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item mb-5"><b>Etat</b>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">EtatID (clé primaire)</li>
+                            <li class="list-group-item">Nom (varchar(50))</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </article>
+
+        <article id="quatre" class="card border-0 mb-5">
+            <section class="card-body">
+                <h3 class="card-tilte">Modèle Conceptuel des Données (MCD)</h3>
+                <p class="card-text">Le MCD représente les entités et leurs relations :</p>
+                <ul class="list-group list-group-flush list-group-numbered">
+                    <li class="list-group-item mb-5"><b>Entités</b> : Utilisateur, Document, Tag, DocumentTag, Fichier,
+                        Etat
+                    </li>
+                    <li class="list-group-item mb-5"><b>Relations :</b>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Un Utilisateur a un Etat.</li>
+                            <li class="list-group-item">Un Document a un Etat.</li>
+                            <li class="list-group-item">Un Tag a un Etat.</li>
+                            <li class="list-group-item">Un Document peut avoir plusieurs Tags (relation DocumentTag).
+                            </li>
+                            <li class="list-group-item">Un Document peut avoir plusieurs Fichiers.</li>
+                            <li class="list-group-item">Un Fichier a un Etat.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </article>
+
+        <article id="cinq" class="card border-0 mb-5">
+            <section class="card-body">
+                <h3 class="card-tilte">Modèle Logique des Données (MLD)</h3>
+                <p class="card-text">Le MLD traduit le MCD en schéma relationnel :</p>
+                <a type="button" class="btn btn-primary m-4" data-clipboard-target="#copy1">
+                    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                        stroke-linejoin="round" class="icon-sm" height="1em" width="1em"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2">
+                        </path>
+                        <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                    </svg>
+                    copy code
+                </a>
+                <pre class="card rounded-4"><code id="copy1">CREATE DATABASE Archive;
+
+USE Archive;
+                    
+CREATE TABLE Etat (
+    EtatID INT AUTO_INCREMENT PRIMARY KEY,
+    Nom VARCHAR(50) NOT NULL
+);
+                    
+CREATE TABLE Utilisateur (
+    UtilisateurID INT AUTO_INCREMENT PRIMARY KEY,
+    EtatID INT,
+    Nom VARCHAR(50) NOT NULL,
+    MotDePasse VARCHAR(255) NOT NULL,
+    Telephone VARCHAR(20),
+    FOREIGN KEY (EtatID) REFERENCES Etat(EtatID)
+);
+                    
+CREATE TABLE Document (
+    DocumentID INT AUTO_INCREMENT PRIMARY KEY,
+    EtatID INT,
+    Titre VARCHAR(50) NOT NULL,
+    Description TEXT,
+    FOREIGN KEY (EtatID) REFERENCES Etat(EtatID)
+);
+                    
+CREATE TABLE Tag (
+    TagID INT AUTO_INCREMENT PRIMARY KEY,
+    EtatID INT,
+    Nom VARCHAR(50) NOT NULL,
+    FOREIGN KEY (EtatID) REFERENCES Etat(EtatID)
+);
+                    
+CREATE TABLE DocumentTag (
+    DocumentID INT,
+    TagID INT,
+    PRIMARY KEY (DocumentID, TagID),
+    FOREIGN KEY (DocumentID) REFERENCES Document(DocumentID),
+    FOREIGN KEY (TagID) REFERENCES Tag(TagID)
+);
+                    
+CREATE TABLE Fichier (
+    FichierID INT AUTO_INCREMENT PRIMARY KEY,
+    DocumentID INT,
+    EtatID INT,
+    Chemin TEXT NOT NULL,
+    FOREIGN KEY (DocumentID) REFERENCES Document(DocumentID),
+    FOREIGN KEY (EtatID) REFERENCES Etat(EtatID)
+);</code></pre>
+            </section>
+        </article>
+
+        <article id="six" class="card border-0 mb-5">
+            <section class="card-body">
+                <h3 class="card-tilte">Explications détaillées</h3>
+                <ul class="list-group list-group-flush list-group-numbered">
+                    <li class="list-group-item mb-5"><b>Etat :</b>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Gère les différents états possibles pour les autres entités (corbeille, supprimé, etc.).</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item mb-5"><b>Utilisateur :</b>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Chaque utilisateur est associé à un état.</li>
+                            <li class="list-group-item">Contient des informations basiques comme le nom, mot de passe et téléphone.</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item mb-5"><b>Document :</b>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Stocke les informations principales des documents.</li>
+                            <li class="list-group-item">Associé à un état pour la gestion des statuts.</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item mb-5"><b>Tag :</b>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Permet de classer les documents en utilisant des mots-clés.</li>
+                            <li class="list-group-item">Chaque tag est aussi associé à un état.
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item mb-5"><b>DocumentTag :</b>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Table de liaison pour les relations plusieurs-à-plusieurs entre les documents et les tags.</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item mb-5"><b>Fichier :</b>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Stocke les chemins des fichiers associés aux documents.</li>
+                            <li class="list-group-item">Chaque fichier a un état et est lié à un document.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p class="card-text"></p>
+            </section>
+        </article>
+
+        <article id="sept" class="card border-0 mb-5">
+            <section class="card-body">
+                <h3 class="card-tilte">Conclusion</h3>
+                <p class="card-text">Ce schéma fournit une base solide pour comprendre la modélisation des bases de données en utilisant MCD et MLD. En suivant cet exemple, un étudiant peut comprendre comment concevoir une base de données relationnelle et la mettre en œuvre efficacement.</p>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <div class="text-center p-2">
+            <h6 class="m-0 text-secondary"><i><b>Version 1.0.0 by <a class="text-secondary" target="_blank"
+                            href="https://github.com/alexanderworldercraft">alexander worldercraft</a></b></i></h6>
+        </div>
+    </footer>
+
+    <!-- Clipboard (copy) -->
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+    <script>
+        var clipboard = new ClipboardJS('.btn');
+
+        clipboard.on('success', function (e) {
+            console.info('Action:', e.action);
+            console.info('Text:', e.text);
+            console.info('Trigger:', e.trigger);
+        });
+
+        clipboard.on('error', function (e) {
+            console.info('Action:', e.action);
+            console.info('Text:', e.text);
+            console.info('Trigger:', e.trigger);
+        });
+    </script>
+</body>
+
+</html>
