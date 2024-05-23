@@ -208,8 +208,8 @@ CREATE TABLE Etat (
 CREATE TABLE Utilisateur (
     UtilisateurID INT AUTO_INCREMENT PRIMARY KEY,
     EtatID INT,
-    Nom VARCHAR(50) NOT NULL,
-    MotDePasse VARCHAR(255) NOT NULL,
+    Nom VARCHAR(50),
+    MotDePasse VARCHAR(255),
     Telephone VARCHAR(20),
     FOREIGN KEY (EtatID) REFERENCES Etat(EtatID)
 );
